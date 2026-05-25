@@ -88,7 +88,7 @@
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp LPAR         &kp RPAR         &kp LBKT     &kp RBKT    &kp GRAVE         &trans
 &trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp LT           &kp GT           &kp LBRC     &kp RBRC    &kp TILDE         &trans
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &kp MINUS        &kp EQUAL        &kp UNDER    &kp PLUS    &trans            &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans       &trans      &trans
+&kp C_MUTE  &kp LCTRL  &kp LEFT_ALT          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans       &trans      &trans
             >;
 
             display-name = "layer1";
@@ -101,7 +101,7 @@
 &studio_unlock      &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans    &kp HOME   &kp UP     &kp END    &trans      &kp PG_UP
 &trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans    &kp LEFT   &kp DOWN   &kp RIGHT  &kp DELETE  &kp PG_DN
 &trans     &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans    &trans     &sys_reset &soft_off  &bootloader &trans
-&trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans    &trans     &trans     &trans     &trans
+&kp C_MUTE  &kp LCTRL  &kp LEFT_ALT      &trans        &trans        &trans          &mkp LCLK        &trans    &trans     &trans     &trans     &trans
             >;
 
             display-name = "layer2";

@@ -84,11 +84,11 @@
 
         layer_1 {
             bindings = <
-&kp F1      &kp F2     &kp F3        &kp F4          &kp F5            &kp F6              &mmv MOVE_UP     &kp F7  &kp F8    &kp F9    &kp F10    &kp F11  &kp F12
-&none       &none      &none         &none           &none             &none               &mmv MOVE_DOWN   &none   &kp HOME  &kp UP    &kp END    &none    &kp PG_UP
-&none       &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI    &kp LSHFT         &none               &mmv MOVE_LEFT   &none   &kp LEFT  &kp DOWN  &kp RIGHT  &none    &kp PG_DN
-&none       &none      &none         &kp LEFT_SHIFT  &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)    &mmv MOVE_RIGHT  &none   &none     &none     &none      &none    &none
-&kp C_MUTE  &none      &none         &none           &kp LSHFT         &none               &mkp LCLK        &none   &none     &none     &none      &none
+&kp F1      &kp F2     &kp F3        &kp F4          &kp F5            &kp F6              &kp UP_ARROW     &kp F7  &kp F8    &kp F9    &kp F10    &kp F11  &kp F12
+&none       &none      &none         &none           &none             &none               &kp DOWN_ARROW   &none   &kp HOME  &kp UP    &kp END    &none    &kp PG_UP
+&none       &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI    &kp LSHFT         &none               &kp LEFT_ARROW   &none   &kp LEFT  &kp DOWN  &kp RIGHT  &none    &kp PG_DN
+&none       &none      &none         &kp LEFT_SHIFT  &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)    &kp RIGHT_ARROW  &none   &none     &none     &none      &none    &none
+&kp C_MUTE  &none      &none         &none           &kp LSHFT         &none               &kp ENTER        &none   &none     &none     &none      &none
             >;
 
             display-name = "NAV";
@@ -97,11 +97,11 @@
 
         layer_2 {
             bindings = <
-&none       &none      &none         &none         &none      &none        &mmv MOVE_UP     &none      &none      &none      &none     &none      &kp BACKSPACE
-&none       &kp LG(Q)  &kp LG(W)     &none         &kp LG(R)  &kp LG(T)    &mmv MOVE_DOWN   &kp LPAR   &kp RPAR   &kp MINUS  &kp EQUAL &kp GRAVE  &none
-&none       &kp LG(A)  &kp LG(S)     &none         &kp LG(F)  &none        &mmv MOVE_LEFT   &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT  &kp TILDE  &none
-&none       &kp LG(Z)  &kp LG(X)     &kp LG(C)     &kp LG(V)  &none        &mmv MOVE_RIGHT  &kp LT     &kp GT     &kp UNDER  &kp PLUS  &none      &none
-&kp C_MUTE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &none      &none        &mkp LCLK        &none      &none      &none      &none     &none
+&none       &none      &none         &none         &none      &none        &kp UP_ARROW     &none      &none      &none      &none     &none      &kp BACKSPACE
+&none       &kp LG(Q)  &kp LG(W)     &none         &kp LG(R)  &kp LG(T)    &kp DOWN_ARROW   &kp LPAR   &kp RPAR   &kp MINUS  &kp EQUAL &kp GRAVE  &none
+&none       &kp LG(A)  &kp LG(S)     &none         &kp LG(F)  &none        &kp LEFT_ARROW   &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT  &kp TILDE  &none
+&none       &kp LG(Z)  &kp LG(X)     &kp LG(C)     &kp LG(V)  &none        &kp RIGHT_ARROW  &kp LT     &kp GT     &kp UNDER  &kp PLUS  &none      &none
+&kp C_MUTE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &none      &none        &kp ENTER        &none      &none      &none      &none     &none
             >;
 
             display-name = "SYM";

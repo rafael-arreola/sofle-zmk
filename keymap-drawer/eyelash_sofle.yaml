@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_sofle}
 layers:
   BASE:
-  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:keyboard-esc$$', s: '`'}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -66,7 +66,7 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - {t: '`', s: '~'}
   NAV:
-  - {t: '$$mdi:keyboard-esc$$', s: '~'}
+  - F1
   - F2
   - F3
   - F4

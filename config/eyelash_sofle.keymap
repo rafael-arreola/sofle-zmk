@@ -6,7 +6,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -38,6 +37,12 @@
     };
 
     behaviors {
+        esc_tilde: esc_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp TILDE>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     combos {
@@ -75,7 +80,7 @@
 &kp TAB     &kp Q      &kp W         &kp E         &kp R        &kp T     &kp DOWN_ARROW   &kp Y   &kp U        &kp I      &kp O            &kp P      &kp BSLH
 &kp CAPS    &kp A      &kp S         &kp D         &kp F        &kp G     &kp LEFT_ARROW   &kp H   &kp J        &kp K      &kp L            &kp SEMI   &kp APOS
 &kp LSHFT   &kp Z      &kp X         &kp C         &kp V        &kp B     &kp RIGHT_ARROW  &kp N   &kp M        &kp COMMA  &kp DOT          &kp FSLH   &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 SPACE  &mo 1     &kp ENTER        &mo 2   &lt 4 SPACE  &kp ENTER  &kp RIGHT_SHIFT  &kp GRAVE
+&kp C_MUTE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE  &mo 1     &kp ENTER        &mo 4   &lt 3 SPACE  &kp ENTER  &kp RIGHT_SHIFT  &kp GRAVE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -84,37 +89,37 @@
 
         layer_1 {
             bindings = <
-&kp F1      &kp F2           &kp F3          &kp F4           &kp F5           &kp F6             &mmv MOVE_UP     &kp F7           &kp F8           &kp F9       &kp F10     &kp F11           &kp F12
-&none       &kp LG(Q)        &kp LG(W)       &none            &kp LG(R)        &kp LG(T)          &mmv MOVE_DOWN   &kp LPAR         &kp RPAR         &kp LBKT     &kp RBKT    &kp GRAVE         &none
-&none       &kp LG(A)        &kp LG(S)       &none            &kp LG(F)        &none              &mmv MOVE_LEFT   &kp LT           &kp GT           &kp LBRC     &kp RBRC    &kp TILDE         &none
-&none       &kp LG(Z)        &kp LG(X)       &kp LG(C)        &kp LG(V)        &none              &mmv MOVE_RIGHT  &kp MINUS        &kp EQUAL        &kp UNDER    &kp PLUS    &none             &none
-&kp C_MUTE  &kp LCTRL        &kp LEFT_ALT    &kp LEFT_GUI     &none            &none              &mkp LCLK        &none            &none            &none        &none       &none
-            >;
-
-            display-name = "SYM";
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        layer_2 {
-            bindings = <
-&kp F1          &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &mmv MOVE_UP     &kp F7     &kp F8    &kp F9     &kp F10    &kp F11      &kp F12
-&none           &none         &none         &none         &none         &none         &mmv MOVE_DOWN   &none      &kp HOME  &kp UP     &kp END    &none        &kp PG_UP
-&none           &none         &none         &none         &none         &none         &mmv MOVE_LEFT   &none      &kp LEFT  &kp DOWN   &kp RIGHT  &none        &kp PG_DN
-&none           &none         &none         &none         &none         &none         &mmv MOVE_RIGHT  &none      &none     &none      &none      &none        &none
-&kp C_MUTE      &kp LCTRL     &kp LEFT_ALT  &kp LEFT_GUI  &none         &none         &mkp LCLK        &none      &none     &none      &none      &none
+&esc_tilde  &kp F2     &kp F3        &kp F4          &kp F5            &kp F6              &kp UP_ARROW     &kp F7  &kp F8    &kp F9    &kp F10    &kp F11  &kp F12
+&none       &none      &none         &none           &none             &none               &kp DOWN_ARROW   &none   &kp HOME  &kp UP    &kp END    &none    &kp PG_UP
+&none       &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI    &kp LSHFT         &none               &kp LEFT_ARROW   &none   &kp LEFT  &kp DOWN  &kp RIGHT  &none    &kp PG_DN
+&none       &none      &none         &kp LEFT_SHIFT  &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)    &kp RIGHT_ARROW  &none   &none     &none     &none      &none    &none
+&kp C_MUTE  &none      &none         &none           &kp LSHFT         &none               &kp ENTER        &none   &none     &none     &none      &none
             >;
 
             display-name = "NAV";
             sensor-bindings = <&scroll_encoder>;
         };
 
+        layer_2 {
+            bindings = <
+&none       &none      &none         &none         &none      &none        &kp UP_ARROW     &kp QUESTION  &none     &none      &none      &none      &kp BACKSPACE
+&none       &kp LG(Q)  &kp LG(W)     &none         &kp LG(R)  &kp LG(T)    &kp DOWN_ARROW   &kp LPAR      &kp RPAR  &kp MINUS  &kp EQUAL  &kp GRAVE  &none
+&none       &kp LG(A)  &kp LG(S)     &none         &kp LG(F)  &none        &kp LEFT_ARROW   &kp LBRC      &kp RBRC  &kp LBKT   &kp RBKT   &kp TILDE  &none
+&none       &kp LG(Z)  &kp LG(X)     &kp LG(C)     &kp LG(V)  &none        &kp RIGHT_ARROW  &kp LT        &kp GT    &kp UNDER  &kp PLUS   &none      &none
+&kp C_MUTE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &none      &none        &kp ENTER        &none         &none     &none      &none      &none
+            >;
+
+            display-name = "SYM";
+            sensor-bindings = <&scroll_encoder>;
+        };
+
         layer_3 {
             bindings = <
-&none       &none            &none           &none            &none            &none              &none            &none      &none      &none      &none      &none        &kp BACKSPACE
-&none       &none            &none           &none            &none            &none              &none            &none      &kp N7     &kp N8     &kp N9     &kp FSLH     &none
-&none       &none            &none           &none            &none            &none              &none            &none      &kp N4     &kp N5     &kp N6     &kp ASTRK    &none
-&none       &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &none            &none      &kp N1     &kp N2     &kp N3     &kp MINUS    &none
-&kp C_MUTE  &kp LCTRL        &kp LEFT_ALT    &kp LEFT_GUI     &none            &none              &none            &kp N0     &kp DOT    &kp PLUS   &kp ENTER  &none
+&none       &none  &none  &none  &none  &none    &none  &none   &none    &none     &none      &none      &kp BACKSPACE
+&none       &none  &none  &none  &none  &none    &none  &none   &kp N7   &kp N8    &kp N9     &kp FSLH   &none
+&none       &none  &none  &none  &none  &none    &none  &none   &kp N4   &kp N5    &kp N6     &kp ASTRK  &none
+&none       &none  &none  &none  &none  &none    &none  &none   &kp N1   &kp N2    &kp N3     &kp MINUS  &none
+&kp C_MUTE  &none  &none  &none  &none  &none    &none  &kp N0  &kp DOT  &kp PLUS  &kp ENTER  &none
             >;
 
             display-name = "NUM";
@@ -123,11 +128,11 @@
 
         layer_4 {
             bindings = <
-&kp TILDE       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none            &none      &none     &none      &none      &none        &none
-&studio_unlock  &bt BT_CLR    &bt BT_CLR_ALL&none         &none         &none         &none            &none      &none     &none      &none      &none        &none
-&none           &out OUT_USB  &out OUT_BLE  &none         &none         &none         &none            &none      &none     &none      &none      &none        &none
-&none           &sys_reset    &none         &bootloader   &none         &none         &none            &none      &none     &sys_reset &soft_off  &bootloader  &none
-&kp C_MUTE      &kp LCTRL     &kp LEFT_ALT  &kp LEFT_GUI  &none         &none         &none            &none      &none     &none      &none      &none
+&kp TILDE       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none            &none           &none            &none            &none            &none
+&studio_unlock  &bt BT_CLR    &none         &none         &none         &none           &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &none
+&none           &none         &none         &none         &none         &none           &none  &none            &none           &none            &none            &none            &none
+&none           &sys_reset    &none         &bootloader   &none         &none           &none  &none            &none           &sys_reset       &soft_off        &bootloader      &none
+&kp C_MUTE      &none         &none         &none         &none         &none           &none  &none            &none           &none            &none            &none
             >;
 
             display-name = "SYS";

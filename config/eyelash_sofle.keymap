@@ -97,7 +97,7 @@
 
         layer_2 {
             bindings = <
-&none       &none      &none         &none         &none      &none        &none            &none      &none      &none      &none     &none      &kp BACKSPACE
+&none       &none      &none         &none         &none      &none        &mmv MOVE_UP     &none      &none      &none      &none     &none      &kp BACKSPACE
 &none       &kp LG(Q)  &kp LG(W)     &none         &kp LG(R)  &kp LG(T)    &mmv MOVE_DOWN   &kp LPAR   &kp RPAR   &kp MINUS  &kp EQUAL &kp GRAVE  &none
 &none       &kp LG(A)  &kp LG(S)     &none         &kp LG(F)  &none        &mmv MOVE_LEFT   &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT  &kp TILDE  &none
 &none       &kp LG(Z)  &kp LG(X)     &kp LG(C)     &kp LG(V)  &none        &mmv MOVE_RIGHT  &kp LT     &kp GT     &kp UNDER  &kp PLUS  &none      &none
